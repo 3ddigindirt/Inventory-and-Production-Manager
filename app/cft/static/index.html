@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CFT Inventory</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand"><div class="brand-mark">CFT</div><div><strong>Inventory</strong><small>Production workspace</small></div></div>
+      <nav id="nav">
+        <button class="nav-item active" data-page="dashboard">Dashboard</button>
+        <button class="nav-item" data-page="inventory">Inventory</button>
+        <button class="nav-item" data-page="production">Production</button>
+        <button class="nav-item" data-page="filament">Filament</button>
+        <button class="nav-item" data-page="projects">Projects</button>
+        <button class="nav-item" data-page="vendorFairs">Vendor Fairs</button>
+        <button class="nav-item" data-page="square">Square Sales</button>
+        <button class="nav-item" data-page="integrations">Integrations</button>
+        <button class="nav-item" data-page="admin">Admin</button>
+      </nav>
+      <div class="sidebar-footer"><span id="api-dot" class="dot"></span><span id="api-status">Checking API...</span></div>
+    </aside>
+
+    <main>
+      <header class="topbar">
+        <div><h1 id="page-title">Dashboard</h1><p id="page-subtitle">Your workshop at a glance.</p></div>
+        <div class="top-actions"><button class="secondary" onclick="refreshCurrent()">Refresh</button><button id="primary-action" onclick="primaryAction()">Add Product</button></div>
+      </header>
+      <div id="toast" class="toast"></div>
+      <section id="content" class="content"></section>
+    </main>
+  </div>
+
+  <dialog id="modal"><form method="dialog" class="modal-card"><div class="modal-head"><div><h2 id="modal-title"></h2><p id="modal-help"></p></div><button class="icon-btn" type="button" onclick="closeModal()" aria-label="Close">×</button></div><div id="modal-body" class="form-grid"></div><div class="modal-actions"><button class="secondary" type="button" onclick="closeModal()">Cancel</button><button id="modal-save" type="button">Save</button></div></form></dialog>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
